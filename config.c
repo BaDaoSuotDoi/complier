@@ -51,6 +51,7 @@ cf_int(char *val)
 static void
 cf_entry_toplevel(char *key, char *val)
 {
+  printf("key : %s\n,val: %s\n ", key, val);
   if (!strcmp(key, "box_root"))
     cf_box_root = cf_string(val);
   else if (!strcmp(key, "cg_root"))
@@ -110,9 +111,8 @@ cf_check(void)
 void
 cf_parse(void)
 {
-  printf("CF parse");
+  printf("CF parse: %s\n", CONFIG_FILE);
   FILE *f = fopen(CONFIG_FILE, "r");
-  printf("%s",CONFIG_FILE );
   if (!f)
     die("Cannot open %s: %m", CONFIG_FILE);
 
