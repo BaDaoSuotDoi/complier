@@ -62,6 +62,11 @@ static char cg_parent_name[256];
 static void
 cg_makepath(char *buf, size_t len, cg_controller c, const char *attr)
 {
+  printf("cf_cg_root: %s\n", cf_cg_root);
+  printf("cg_parent_name: %s\n", cg_parent_name);
+  printf("cg_name: %s\n", cg_name);
+  printf("attr: %s\n", attr);
+
   snprintf(buf, len, "%s/%s/%s/%s",
     cf_cg_root,
     cg_controller_name(c & ~CG_PARENT),
